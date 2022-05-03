@@ -23,18 +23,19 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.InMemoryTransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 
 /**
- *
- */
+
 public class InMemoryDemoExpenseManager extends ExpenseManager {
 
     public InMemoryDemoExpenseManager() {
         setup();
     }
-
+**/
+/**
     @Override
     public void setup() {
         /*** Begin generating dummy data for In-Memory implementation ***/
 
+        /**
         TransactionDAO inMemoryTransactionDAO = new InMemoryTransactionDAO();
         setTransactionsDAO(inMemoryTransactionDAO);
 
@@ -48,5 +49,7 @@ public class InMemoryDemoExpenseManager extends ExpenseManager {
         getAccountsDAO().addAccount(dummyAcct2);
 
         /*** End ***/
+        /**
     }
 }
+         **/
