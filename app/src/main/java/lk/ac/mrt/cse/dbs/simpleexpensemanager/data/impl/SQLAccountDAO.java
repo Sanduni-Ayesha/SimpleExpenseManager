@@ -56,7 +56,7 @@ public class SQLAccountDAO implements AccountDAO {
     @Override
     public Account getAccount(String accountNo) throws InvalidAccountException {
         SQLiteDatabase db = sqlHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM accounts WHERE accountNo="+accountNo+"",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM accounts WHERE accountNo=?",new String[] {accountNo});
 
         if (cursor.moveToFirst()) {
             String bank = cursor.getString(cursor.getColumnIndex("bank"));
