@@ -53,13 +53,13 @@ public class SQLTransactionDAO implements TransactionDAO {
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
             Date date = null;
             try {
-                date = new SimpleDateFormat("dd/MM/yyyy").parse(cursor.getString(cursor.getColumnIndex("date")));
+                date = new SimpleDateFormat("dd/MM/yyyy").parse(cursor.getString(cursor.getColumnIndexOrThrow("date")));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            String accountNo =  cursor.getString(cursor.getColumnIndex("accountNo"));
-            ExpenseType type = ExpenseType.valueOf(cursor.getString(cursor.getColumnIndex("expenseType")));
-            Double amount =  cursor.getDouble(cursor.getColumnIndex("amount"));
+            String accountNo =  cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
+            ExpenseType type = ExpenseType.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("expenseType")));
+            Double amount =  cursor.getDouble(cursor.getColumnIndexOrThrow("amount"));
 
             transactions.add(new Transaction(date,accountNo,type,amount));
         }
@@ -76,13 +76,13 @@ public class SQLTransactionDAO implements TransactionDAO {
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
             Date date = null;
             try {
-                date = new SimpleDateFormat("dd/MM/yyyy").parse(cursor.getString(cursor.getColumnIndex("date")));
+                date = new SimpleDateFormat("dd/MM/yyyy").parse(cursor.getString(cursor.getColumnIndexOrThrow("date")));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            String accountNo =  cursor.getString(cursor.getColumnIndex("accountNo"));
-            ExpenseType type = ExpenseType.valueOf(cursor.getString(cursor.getColumnIndex("expenseType")));
-            Double amount =  cursor.getDouble(cursor.getColumnIndex("amount"));
+            String accountNo =  cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
+            ExpenseType type = ExpenseType.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("expenseType")));
+            Double amount =  cursor.getDouble(cursor.getColumnIndexOrThrow("amount"));
 
             transactions.add(new Transaction(date,accountNo,type,amount));
         }
