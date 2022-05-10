@@ -30,7 +30,7 @@ public class SQLAccountDAO implements AccountDAO {
         List<String> accountNos = new LinkedList<>();
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
-            String accountNo =  cursor.getString(cursor.getColumnIndex("accountNo"));
+            String accountNo =  cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
             accountNos.add(accountNo);
         }
         return accountNos;
@@ -44,10 +44,10 @@ public class SQLAccountDAO implements AccountDAO {
         List<Account> accounts = new LinkedList<>();
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
-            String accountNo =  cursor.getString(cursor.getColumnIndex("accountNo"));
-            String bank =  cursor.getString(cursor.getColumnIndex("bank"));
-            String name =  cursor.getString(cursor.getColumnIndex("name"));
-            Double balance =  cursor.getDouble(cursor.getColumnIndex("initialBalance"));
+            String accountNo =  cursor.getString(cursor.getColumnIndexOrThrow("accountNo"));
+            String bank =  cursor.getString(cursor.getColumnIndexOrThrow("bank"));
+            String name =  cursor.getString(cursor.getColumnIndexOrThrow("name"));
+            Double balance =  cursor.getDouble(cursor.getColumnIndexOrThrow("initialBalance"));
             accounts.add(new Account(accountNo,bank,name,balance));
         }
         return accounts;
@@ -59,9 +59,9 @@ public class SQLAccountDAO implements AccountDAO {
         Cursor cursor = db.rawQuery("SELECT * FROM accounts WHERE accountNo=?",new String[] {accountNo});
 
         if (cursor.moveToFirst()) {
-            String bank = cursor.getString(cursor.getColumnIndex("bank"));
-            String name = cursor.getString(cursor.getColumnIndex("name"));
-            double balance = cursor.getDouble(cursor.getColumnIndex("initialBalance"));
+            String bank = cursor.getString(cursor.getColumnIndexOrThrow("bank"));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+            double balance = cursor.getDouble(cursor.getColumnIndexOrThrow("initialBalance"));
             Account account = new Account(accountNo, bank, name, balance);
             return account;
         }else {
