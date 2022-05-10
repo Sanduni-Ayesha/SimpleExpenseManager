@@ -35,9 +35,9 @@ lk/ac/mrt/cse/dbs/simpleexpensemanager/ui/MainActivity.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.ui.MainActivity$SectionsPagerAdapter
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/db/SQLHelper.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.db.SQLHelper
-lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLTransactionDAO.java
- lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLTransactionDAO
 lk/ac/mrt/cse/dbs/simpleexpensemanager/control/PersistentExchangeManager.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExchangeManager
 lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLAccountDAO.java
  lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLAccountDAO
+lk/ac/mrt/cse/dbs/simpleexpensemanager/data/impl/SQLTransactionDAO.java
+ lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.SQLTransactionDAO
